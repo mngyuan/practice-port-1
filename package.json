@@ -1,0 +1,46 @@
+{
+  "name": "create-react-app-test",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "flow-bin": "^0.81.0",
+    "gh-pages": "^1.0.0",
+    "react-scripts": "^1.0.17"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.1.2",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^16.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-import": "^2.11.0",
+    "eslint-plugin-jest": "^21.15.1",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "eslint-plugin-react": "^7.8.2",
+    "eslint-plugin-standard": "^3.1.0",
+    "history": "^4.7.2",
+    "mngyuan-lib": "file:../../lib/build",
+    "prettier": "^1.12.1",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-responsive": "^4.1.0",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -b master -d build",
+    "flow": "flow"
+  },
+  "homepage": "https://phorust.github.io"
+}

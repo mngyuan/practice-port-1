@@ -1,0 +1,152 @@
+body,
+html,
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-family: 'Public Sans', sans-serif;
+  font-size: 10pt;
+  color: white;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  -webkit-overflow-scrolling: touch;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+  overflow: scroll;
+}
+
+.content {
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.content-anchor {
+  position: relative;
+  width: 460px;
+  height: 500px;
+}
+
+.content-scrollable {
+  overflow: scroll;
+  height: 500px;
+  /* overflow x cant be visible if overflow y is scroll */
+  padding: 150px;
+  margin: -150px;
+}
+
+.left-bar {
+  position: absolute;
+  left: -250px;
+  transform: rotate(-90deg) translateY(-50%);
+  top: 50%;
+  letter-spacing: 3px;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+
+nav > a {
+  margin: 8px;
+}
+
+.right-bar {
+  position: absolute;
+  right: -150px;
+  transform: rotate(90deg) translateY(-50%);
+  top: 50%;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.bottom-bar {
+  position: absolute;
+  bottom: -150px;
+  right: 100px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+.top-bar {
+  position: absolute;
+  top: -150px;
+  left: 100px;
+}
+
+.landing {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+.landing img {
+  width: 460px;
+  height: 360px;
+  object-fit: cover;
+  margin-bottom: 24px;
+}
+
+.landing h3 {
+  font-weight: 800;
+  letter-spacing: 5px;
+  font-size: 96px;
+  color: #ff3500;
+  position: absolute;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.landing h3::before {
+  content: attr(data-text);
+  position: absolute;
+  top: -35%;
+  clip-path: inset(0 0 52% 0);
+}
+
+.landing h3.bottom {
+  bottom: 20%;
+  top: initial;
+}
+
+.landing h3.bottom::before {
+  bottom: -25%;
+  top: initial;
+  clip-path: inset(65% 0 0 0);
+}
+
+.landing .cover {
+  position: relative;
+}
+
+@media only screen and (max-width: 768px) {
+  /* responsive here */
+}
