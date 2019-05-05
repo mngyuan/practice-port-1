@@ -4,56 +4,64 @@ import {importAll} from 'mngyuan-lib';
 
 import * as React from 'react';
 import {Link} from 'react-router-dom';
-import PHOTO_1 from './static/images/87100018.jpg';
-import PHOTO_2 from './static/images/87100022.jpg';
-import PHOTO_3 from './static/images/87100024.jpg';
+
+import TOKYO_DREAMING_COVER from './photos/tokyo-dreaming/000019.JPG';
+import NYC_DARK_COVER from './photos/nyc-dark/S398787-R3-E097.jpg';
+import CINEANNE_COVER from './photos/cineanne/S398787-R4-E128.jpg';
 
 const SETS = {
   'tokyo-dreaming': {
     photos: importAll(
-      require.context('./photos/tokyo-dreaming', false, /\.(png|jpe?g|svg)$/),
+      require.context('./photos/tokyo-dreaming', false, /\.(png|jpe?g|svg)$/i),
     ),
+    cover: TOKYO_DREAMING_COVER,
+  },
+  'nyc-dark': {
+    photos: importAll(
+      require.context('./photos/nyc-dark', false, /\.(png|jpe?g|svg)$/i),
+    ),
+    cover: NYC_DARK_COVER,
+    bottom: true,
+  },
+  cineanne: {
+    photos: importAll(
+      require.context('./photos/cineanne', false, /\.(png|jpe?g|svg)$/i),
+    ),
+    cover: CINEANNE_COVER,
   },
 };
 
 const PhotoLanding = () => (
   <div className="landing">
-    <div className="cover">
-      <h3 data-text="KOREA 2017">KOREA 2017</h3>
-      <img src={PHOTO_3} />
-    </div>
-    <div className="cover">
-      <Link to="/photo/tokyo-dreaming">
-        <h3 data-text="TOKYO DREAMING">TOKYO DREAMING</h3>
+    {Object.keys(SETS).map(setName => (
+      <Link to={`/photo/${setName}`}>
+        <div className="cover">
+          <h3
+            data-text={setName.replace(/-/g, ' ')}
+            className={SETS[setName].bottom ? 'bottom' : ''}
+          >
+            {setName.replace(/-/g, ' ')}
+          </h3>
+          <img src={SETS[setName].cover} />
+        </div>
       </Link>
-      <img src={PHOTO_1} />
-    </div>
-    <div className="cover">
-      <h3 className="bottom" data-text="ANNE NYC">
-        ANNE NYC
-      </h3>
-      <img src={PHOTO_2} />
-    </div>
-    <div className="cover">
-      <h3 className="bottom" data-text="LISA @ HOME">
-        LISA @ HOME
-      </h3>
-      <img src={PHOTO_3} />
-    </div>
+    ))}
   </div>
 );
 
 const PhotoSet = (props: {set: string}) => {
-  console.log(props, SETS);
-  const humanFriendlySetName = props.set.replace(/-/g, ' ');
-  const photoElems = SETS[props.set].photos.map(src => (
+  const setName = props.set;
+  const humanFriendlySetName = setName.replace(/-/g, ' ');
+  const photoElems = SETS[setName].photos.map(src => (
     <img key={src} src={src} />
   ));
   return (
     <div className="landing">
       <div className="cover">
-        <h3 data-text="KOREA 2017">KOREA 2017</h3>
-        <img src={PHOTO_3} />
+        <h3 data-text={setName.replace(/-/g, ' ')}>
+          {setName.replace(/-/g, ' ')}
+        </h3>
+        <img src={SETS[setName].cover} />
       </div>
       {photoElems}
     </div>

@@ -108,7 +108,7 @@ nav > a {
 }
 .landing img {
   width: 460px;
-  height: 360px;
+  /*height: 360px;*/
   object-fit: cover;
   margin-bottom: 24px;
 }
@@ -123,6 +123,7 @@ nav > a {
   left: 50%;
   transform: translateX(-50%);
   white-space: nowrap;
+  text-transform: uppercase;
 }
 
 .landing h3::before {
@@ -130,6 +131,7 @@ nav > a {
   position: absolute;
   top: -35%;
   clip-path: inset(0 0 52% 0);
+  text-transform: uppercase;
 }
 
 .landing h3.bottom {
@@ -145,6 +147,14 @@ nav > a {
 
 .landing .cover {
   position: relative;
+}
+
+.print {
+  /* SinglePhotoGallery's parent needs a defined height */
+  height: 100%;
+}
+
+.about {
 }
 
 @media only screen and (max-width: 768px) {
