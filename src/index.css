@@ -159,4 +159,40 @@ nav > a {
 
 @media only screen and (max-width: 768px) {
   /* responsive here */
+  .content {
+    height: auto;
+  }
+  .content-anchor {
+    width: auto;
+    height: auto;
+  }
+
+  .content-scrollable {
+    height: auto;
+    padding: 84px 60px;
+    margin: 0;
+  }
+
+  .top-bar,
+  .left-bar,
+  .bottom-bar,
+  .right-bar {
+    position: fixed;
+  }
+  .top-bar {
+    top: 10px;
+  }
+  .bottom-bar {
+    bottom: 10px;
+  }
+  .left-bar {
+    left: -100px;
+  }
+  .right-bar {
+    right: 10px;
+  }
+
+  .landing h3 {
+    font-size: 36px;
+  }
 }
