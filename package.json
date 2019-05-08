@@ -39,8 +39,8 @@
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -b gh-pages -d build",
     "flow": "flow"
   },
-  "homepage": "https://phorust.github.io"
+  "homepage": "https://phorust.github.io/practice-port-1"
 }
