@@ -8,6 +8,7 @@ import Photo from './Photo.react';
 import Print from './Print.react';
 import Video from './Video.react';
 import About from './About.react';
+import ScrollableArea from './ScrollableArea.react';
 
 const history = createBrowserHistory();
 
@@ -15,7 +16,7 @@ const Content = withRouter(props => (
   <div className="container">
     <div className="content">
       <div className="content-anchor">
-        <div className="content-scrollable">
+        <ScrollableArea resetOnPage>
           <Switch>
             <Route path="/" exact component={Landing} />
             <Route path="/photo/:set?" component={Photo} />
@@ -23,7 +24,7 @@ const Content = withRouter(props => (
             <Route path="/video" exact component={Video} />
             <Route path="/print/:set?" component={Print} />
           </Switch>
-        </div>
+        </ScrollableArea>
         <nav className="left-bar">
           <Link to="/about">ABOUT</Link>
           <Link to="/print">PRINT</Link>
