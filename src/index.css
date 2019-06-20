@@ -57,17 +57,23 @@ p {
 .content-scrollable {
   overflow: scroll;
   height: 500px;
+  position: relative;
+  right: calc(var(--mouse-x) * 8px);
+  top: calc(var(--mouse-y) * -8px);
+  transition: all ease-out 0.2s;
   /* overflow x cant be visible if overflow y is scroll */
   padding: 150px;
   margin: -150px;
+  padding-right: calc(var(--mouse-x) * 8px + 150px);
 }
 
 .left-bar {
   position: absolute;
-  left: -250px;
+  left: calc(var(--mouse-x) * -24px - 250px);
   transform: rotate(-90deg) translateY(-50%);
-  top: 50%;
+  top: calc(var(--mouse-y) * -16px + 50%);
   letter-spacing: 3px;
+  transition: all ease 0.2s;
 }
 
 nav {
@@ -81,24 +87,27 @@ nav > a {
 
 .right-bar {
   position: absolute;
-  right: -150px;
+  right: calc(var(--mouse-x) * 24px - 150px);
   transform: rotate(90deg) translateY(-50%);
-  top: 50%;
+  top: calc(var(--mouse-y) * -16px + 50%);
   letter-spacing: 5px;
   text-transform: uppercase;
+  transition: all ease-out 0.2s;
 }
 
 .bottom-bar {
   position: absolute;
-  bottom: -150px;
-  right: 100px;
+  bottom: calc(var(--mouse-y) * 24px - 150px);
+  right: calc(var(--mouse-x) * 16px + 100px);
   font-size: 12px;
   letter-spacing: 2px;
+  transition: all ease-out 0.2s;
 }
 .top-bar {
   position: absolute;
-  top: -150px;
-  left: 100px;
+  top: calc(var(--mouse-y) * -16px - 160px);
+  left: calc(var(--mouse-x) * -24px + 100px);
+  transition: all ease-out 0.2s;
 }
 
 .landing {
