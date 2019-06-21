@@ -25,5 +25,4 @@ document.addEventListener('mousemove', e => {
   const mouseYVal = Math.log((Math.E - 1) * mouseYPerc + 1);
   document.documentElement.style.setProperty('--mouse-x', mouseXVal);
   document.documentElement.style.setProperty('--mouse-y', mouseYVal);
-  console.log(mouseXVal, mouseYVal);
 });

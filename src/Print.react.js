@@ -15,8 +15,8 @@ const SETS = {
 
 const Print = () => (
   <div className="print">
-    <SinglePhotoGallery photoElems={SETS.hthfasfa} />
-    <SinglePhotoGallery photoElems={SETS.milkfat} />
+    <SinglePhotoGallery photoElems={SETS.hthfasfa} className="gallery" />
+    <SinglePhotoGallery photoElems={SETS.milkfat} className="gallery" />
   </div>
 );
 
