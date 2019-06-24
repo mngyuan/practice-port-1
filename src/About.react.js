@@ -22,6 +22,9 @@ const About = () => (
         between technology and art. His work spans and combines design,
         photography, and software, from websites to photo zines to videography.
       </p>
+      <br />
+      <p>He is available for hire.</p>
+      <p>me at mngyuan.com</p>
     </div>
   </React.Fragment>
 );
