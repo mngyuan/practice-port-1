@@ -42,5 +42,5 @@
     "deploy": "gh-pages -b gh-pages -d build",
     "flow": "flow"
   },
-  "homepage": "https://phorust.github.io/practice-port-1"
+  "homepage": "https://phorust.gitlab.io/practice-port-1"
 }
