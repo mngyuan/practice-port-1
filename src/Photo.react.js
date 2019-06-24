@@ -3,6 +3,7 @@
 import {importAll} from 'mngyuan-lib';
 
 import * as React from 'react';
+import Helmet from 'react-helmet';
 import {Link} from 'react-router-dom';
 
 import TOKYO_DREAMING_COVER from './photos/tokyo-dreaming/000019.JPG';
@@ -32,21 +33,24 @@ const SETS = {
 };
 
 const PhotoLanding = () => (
-  <div className="landing">
-    {Object.keys(SETS).map(setName => (
-      <Link to={`/photo/${setName}`}>
-        <div className="cover">
-          <h3
-            data-text={setName.replace(/-/g, ' ')}
-            className={SETS[setName].bottom ? 'bottom' : ''}
-          >
-            {setName.replace(/-/g, ' ')}
-          </h3>
-          <img src={SETS[setName].cover} />
-        </div>
-      </Link>
-    ))}
-  </div>
+  <React.Fragment>
+    <Helmet title="photo · Kevin Lee" />
+    <div className="landing">
+      {Object.keys(SETS).map(setName => (
+        <Link to={`/photo/${setName}`}>
+          <div className="cover">
+            <h3
+              data-text={setName.replace(/-/g, ' ')}
+              className={SETS[setName].bottom ? 'bottom' : ''}
+            >
+              {setName.replace(/-/g, ' ')}
+            </h3>
+            <img src={SETS[setName].cover} />
+          </div>
+        </Link>
+      ))}
+    </div>
+  </React.Fragment>
 );
 
 const PhotoSet = (props: {set: string}) => {

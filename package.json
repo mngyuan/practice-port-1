@@ -1,11 +1,12 @@
 {
-  "name": "create-react-app-test",
+  "name": "phorust.github.io",
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
     "flow-bin": "^0.81.0",
     "gh-pages": "^1.0.0",
-    "react-scripts": "^1.0.17"
+    "react-scripts": "^1.0.17",
+    "react-snap": "^1.19.0"
   },
   "dependencies": {
     "@babel/cli": "^7.1.2",
@@ -24,23 +25,31 @@
     "prettier": "^1.12.1",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
-    "react-responsive": "^4.1.0",
+    "react-helmet": "^5.2.0",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2"
-  },
-  "prettier": {
-    "singleQuote": true,
-    "trailingComma": "all",
-    "bracketSpacing": false
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "postbuild": "react-snap",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
     "deploy": "gh-pages -b gh-pages -d build",
     "flow": "flow"
   },
-  "homepage": "https://phorust.gitlab.io/practice-port-1"
+  "prettier": {
+    "singleQuote": true,
+    "trailingComma": "all",
+    "bracketSpacing": false
+  },
+    "reactSnap": {
+    "waitFor": 1000,
+    "include": [
+      "/",
+      "/sitemap"
+    ]
+  },
+  "homepage": "https://phorust.gitlab.io"
 }

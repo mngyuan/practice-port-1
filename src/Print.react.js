@@ -1,6 +1,7 @@
 // @flow
 
 import * as React from 'react';
+import Helmet from 'react-helmet';
 
 import {SinglePhotoGallery, importAllAsArray} from 'mngyuan-lib';
 
@@ -14,10 +15,13 @@ const SETS = {
 };
 
 const Print = () => (
-  <div className="print">
-    <SinglePhotoGallery photoElems={SETS.hthfasfa} className="gallery" />
-    <SinglePhotoGallery photoElems={SETS.milkfat} className="gallery" />
-  </div>
+  <React.Fragment>
+    <Helmet title="print · Kevin Lee" />
+    <div className="print">
+      <SinglePhotoGallery photoElems={SETS.hthfasfa} className="gallery" />
+      <SinglePhotoGallery photoElems={SETS.milkfat} className="gallery" />
+    </div>
+  </React.Fragment>
 );
 
 export default Print;
