@@ -5,6 +5,14 @@ import * as React from 'react';
 const Video = () => (
   <div className="landing">
     <iframe
+      src="https://player.vimeo.com/video/343994338"
+      width="460"
+      height="259"
+      frameborder="0"
+      allow="autoplay; fullscreen"
+      allowfullscreen
+    />
+    <iframe
       src="https://player.vimeo.com/video/299145066"
       width="460"
       height="500"
