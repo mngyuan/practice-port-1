@@ -19,7 +19,15 @@ const Print = () => (
     <Helmet title="print · Kevin Lee" />
     <div className="print">
       <SinglePhotoGallery photoElems={SETS.hthfasfa} className="gallery" />
+      <div className="caption">
+        <i>How to Have Friends and Still Feel Alone</i>
+        2018
+      </div>
       <SinglePhotoGallery photoElems={SETS.milkfat} className="gallery" />
+      <div className="caption">
+        <i>MILKFAT</i>
+        2018
+      </div>
     </div>
   </React.Fragment>
 );

@@ -107,6 +107,10 @@ nav > a {
   flex-direction: column;
   position: relative;
 }
+.photoset {
+  width: 460px;
+  margin: 0 auto;
+}
 .landing img {
   width: 460px;
   /*height: 360px;*/
@@ -116,6 +120,12 @@ nav > a {
 }
 .landing iframe {
   align-self: center;
+}
+.photoset .caption {
+  margin-bottom: 12px;
+}
+.photoset p {
+  margin-bottom: 24px;
 }
 
 .landing h3 {
@@ -158,16 +168,31 @@ nav > a {
   margin: 0 auto;
   width: 500px;
 }
-.print .gallery {
-  margin-bottom: 48px;
+.print .gallery > img {
+  margin-right: 0;
 }
-.print .gallery:nth-last-child(2) {
-  margin-bottom: 0;
+.print .caption {
+  margin-top: 12px;
+  margin-bottom: 48px;
 }
 
 .about {
   width: 500px;
   margin: 0 auto;
+}
+
+.caption {
+  font-family: 'Source Code Pro', monospace;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.description {
+  text-align: left;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 12px;
 }
 
 @media only screen and (max-width: 768px) {
