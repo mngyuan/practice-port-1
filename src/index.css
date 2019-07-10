@@ -229,12 +229,18 @@ nav > a {
     right: 10px;
   }
 
+  .landing {
+    width: auto;
+  }
   .landing h3 {
     font-size: 36px;
   }
   .landing iframe,
   .landing img {
     max-width: 100%;
+  }
+  .photoset pre {
+    white-space: pre-wrap;
   }
 
   .about,
