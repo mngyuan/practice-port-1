@@ -18,6 +18,7 @@ const SETS = {
     cover: TOKYO_DREAMING_COVER,
   },
   'tokyo-dreaming-wip': {
+    hidden: true,
     photos: importAll(
       require.context('./photos/tokyo-dreaming', false, /\.(png|jpe?g|svg)$/i),
     ),
@@ -122,19 +123,21 @@ const PhotoLanding = () => (
   <React.Fragment>
     <Helmet title="photo · Kevin Lee" />
     <div className="landing">
-      {Object.keys(SETS).map(setName => (
-        <Link to={`/photo/${setName}`}>
-          <div className="cover">
-            <h3
-              data-text={setName.replace(/-/g, ' ')}
-              className={SETS[setName].bottom ? 'bottom' : ''}
-            >
-              {setName.replace(/-/g, ' ')}
-            </h3>
-            <img src={SETS[setName].cover} />
-          </div>
-        </Link>
-      ))}
+      {Object.keys(SETS)
+        .filter(setName => !SETS[setName].hidden)
+        .map(setName => (
+          <Link to={`/photo/${setName}`}>
+            <div className="cover">
+              <h3
+                data-text={setName.replace(/-/g, ' ')}
+                className={SETS[setName].bottom ? 'bottom' : ''}
+              >
+                {setName.replace(/-/g, ' ')}
+              </h3>
+              <img src={SETS[setName].cover} />
+            </div>
+          </Link>
+        ))}
     </div>
   </React.Fragment>
 );
